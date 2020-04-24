@@ -10,67 +10,67 @@ const config = {
       style: {
         background: 'linear-gradient( grey, black)',
         textShadow: '0.5px 0.5px black',
-        fontSize: 12
-      }
+        fontSize: 12,
+      },
     },
     dayOfWeek: {
       style: {
         background: 'linear-gradient( orange, grey)',
-        fontSize: 9
-      }
+        fontSize: 9,
+      },
     },
     dayTime: {
       style: {
         background: 'linear-gradient( grey, black)',
         fontSize: 9,
-        color: 'orange'
+        color: 'orange',
       },
       selectedStyle: {
         background: 'linear-gradient( #d011dd ,#d011dd)',
         fontWeight: 'bold',
-        color: 'white'
-      }
-    }
+        color: 'white',
+      },
+    },
   },
   taskList: {
     title: {
       label: 'Task Todo',
       style: {
-        background: 'linear-gradient( grey, black)'
-      }
+        background: 'linear-gradient( grey, black)',
+      },
     },
     task: {
       style: {
         backgroundColor: 'grey',
-        color: 'white'
-      }
+        color: 'white',
+      },
     },
     verticalSeparator: {
       style: {
-        backgroundColor: '#fbf9f9'
+        backgroundColor: '#fbf9f9',
       },
       grip: {
         style: {
-          backgroundColor: 'red'
-        }
-      }
-    }
+          backgroundColor: 'red',
+        },
+      },
+    },
   },
   dataViewPort: {
     rows: {
       style: {
         backgroundColor: 'white',
-        borderBottom: 'solid 0.5px silver'
-      }
+        borderBottom: 'solid 0.5px silver',
+      },
     },
     task: {
       showLabel: true,
       style: {
         borderRadius: 1,
-        boxShadow: '2px 2px 8px #888888'
-      }
-    }
-  }
+        boxShadow: '2px 2px 8px #888888',
+      },
+    },
+  },
 };
 
 class App extends Component {
@@ -84,7 +84,7 @@ class App extends Component {
       selectedItem: null,
       timelineMode: 'month',
       links: result.links,
-      nonEditableName: false
+      nonEditableName: false,
     };
   }
 
@@ -158,7 +158,7 @@ class App extends Component {
       start: new Date(),
       end: this.getRandomDate(),
       name: 'New Task',
-      color: this.getRandomColor()
+      color: this.getRandomColor(),
     };
     this.setState({ data: [newTask, ...this.state.data] });
   };
@@ -227,7 +227,7 @@ class App extends Component {
               style={{ marginLeft: '20px' }}
               onClick={() => {
                 this.setState({
-                  nonEditableName: !this.state.nonEditableName
+                  nonEditableName: !this.state.nonEditableName,
                 });
               }}
             >
@@ -248,6 +248,16 @@ class App extends Component {
             itemheight={this.state.itemheight}
             selectedItem={this.state.selectedItem}
             nonEditableName={this.state.nonEditableName}
+            renderCard={(item) => {
+              console.log({ item });
+
+              return (
+                <div>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Facebook_icon_2013.svg" />
+                  <span>{item.name}</span>
+                </div>
+              );
+            }}
           />
         </div>
       </div>

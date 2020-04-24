@@ -61,6 +61,7 @@ export class DataViewPort extends Component {
             onFinishCreateLink={this.props.onFinishCreateLink}
             onTaskChanging={this.props.onTaskChanging}
             onUpdateTask={this.props.onUpdateTask}
+            renderCard={this.props.renderCard}
           >
             {' '}
           </DataTask>
