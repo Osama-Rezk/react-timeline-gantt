@@ -19,9 +19,9 @@ export class HeaderItem extends PureComponent {
           alignItems: 'center',
           borderLeft: 'solid 1px white',
           position: 'absolute',
-          height: 20,
+          height: 76,
           left: this.props.left,
-          width: this.props.width
+          width: this.props.width,
         }}
       >
         <div>{this.props.label}</div>
@@ -137,6 +137,8 @@ export default class Header extends PureComponent {
         currentMiddle = currentDate.format(this.getFormat(middle));
         box = this.getBox(currentDate, middle, lastLeft.middle);
         lastLeft.middle = box.left + box.width;
+
+        //set the height of the box
         result.middle.push(<HeaderItem key={i} left={box.left} width={box.width} label={currentMiddle} />);
       }
 
@@ -153,17 +155,18 @@ export default class Header extends PureComponent {
     }
 
     return (
-      <div className="timeLine-main-header-container" style={{ width: DATA_CONTAINER_WIDTH, maxWidth: DATA_CONTAINER_WIDTH }}>
-        <div className="header-top" style={{ ...Config.values.header.top.style }}>
-          {result.top}
-        </div>
-        <div className="header-middle" style={{ ...Config.values.header.middle.style }}>
-          {result.middle}
-        </div>
-        <div className="header-bottom" style={{ ...Config.values.header.bottom.style }}>
-          {result.bottom}
-        </div>
+      <div className="header-bottom" style={{ ...Config.values.header.bottom.style }}>
+        {result.bottom}
       </div>
+      // <div className="timeLine-main-header-container" style={{ width: DATA_CONTAINER_WIDTH, maxWidth: DATA_CONTAINER_WIDTH }}>
+      //  <div className="header-top" style={{ ...Config.values.header.top.style }}>
+      // {result.top}
+      // </div>
+      //  <div className="header-middle" style={{ ...Config.values.header.middle.style }}>
+      // {result.middle}
+      // </div>
+
+      // </div>
     );
   };
 

@@ -79,7 +79,7 @@ class App extends Component {
     let result = Generator.generateData();
     this.data = result.data;
     this.state = {
-      itemheight: 20,
+      // itemheight: 20,
       data: [],
       selectedItem: null,
       timelineMode: 'month',
@@ -184,23 +184,7 @@ class App extends Component {
       <div className="app-container">
         <div className="nav-container">
           <div className="mode-container-title">Full Demo</div>
-          <div className="operation-button-container">
-            <div className="operation-button-container">
-              <div className="mode-button" onClick={this.addTask}>
-                <svg height={30} width={30} viewBox="0 0 48 48">
-                  <path
-                    fill="silver"
-                    d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm10 22h-8v8h-4v-8h-8v-4h8v-8h4v8h8v4z"
-                  />
-                </svg>
-              </div>
-              <div className="mode-button" onClick={this.delete}>
-                <svg height={30} width={30} viewBox="0 0 48 48">
-                  <path fill="silver" d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm10 22H14v-4h20v4z" />
-                </svg>
-              </div>
-            </div>
-          </div>
+
           <div className="mode-container">
             <div
               className="mode-container-item mode-container-item-left"
@@ -222,17 +206,6 @@ class App extends Component {
             >
               Year
             </div>
-            <div
-              className="mode-container-item mode-container-item-editable-toggle"
-              style={{ marginLeft: '20px' }}
-              onClick={() => {
-                this.setState({
-                  nonEditableName: !this.state.nonEditableName,
-                });
-              }}
-            >
-              {this.state.nonEditableName ? 'Enable' : 'Disable'} name edition
-            </div>
           </div>
         </div>
         <div className="time-line-container">
@@ -245,16 +218,38 @@ class App extends Component {
             onUpdateTask={this.onUpdateTask}
             onCreateLink={this.onCreateLink}
             mode={this.state.timelineMode}
-            itemheight={this.state.itemheight}
+            // itemheight={this.state.itemheight}
             selectedItem={this.state.selectedItem}
             nonEditableName={this.state.nonEditableName}
             renderCard={(item) => {
-              console.log({ item });
-
               return (
-                <div>
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Facebook_icon_2013.svg" />
-                  <span>{item.name}</span>
+                <div class="timeline-user-inner">
+                  <div class="user-content userCT">
+                    <div class="userImg">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Facebook_icon_2013.svg"
+                        class="circle img-fluid task-user"
+                      />
+                    </div>
+                    <div class="userInfo">
+                      <div>
+                        <div class="userName">Kevin Jacob</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="userStatus userStatus-delayed">
+                    <div class="userStatus-circle">
+                      <span class="ic-info userStatus-ic">!</span>
+                    </div>
+                    <div class="userStatus-text">
+                      Delayed
+                      <div class="status-tooltip"></div>
+                    </div>
+                  </div>
+                  {/* <span class="arrow-bottom arrow-inner">
+                    <i class="fas fa-chevron-down"></i>
+                  </span> */}
                 </div>
               );
             }}

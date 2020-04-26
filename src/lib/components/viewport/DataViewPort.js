@@ -13,7 +13,8 @@ export class DataRow extends Component {
     return (
       <div
         className="timeLine-main-data-row"
-        style={{ ...Config.values.dataViewPort.rows.style, top: this.props.top, height: this.props.itemheight }}
+        // , height: this.props.itemheight
+        style={{ ...Config.values.dataViewPort.rows.style, top: this.props.top }}
       >
         {this.props.children}
       </div>
@@ -116,7 +117,14 @@ export class DataViewPort extends Component {
       >
         <div
           className="timeLine-main-data-container"
-          style={{ height: height, width: DATA_CONTAINER_WIDTH, maxWidth: DATA_CONTAINER_WIDTH }}
+          style={{
+            height: height,
+
+            width: DATA_CONTAINER_WIDTH,
+            maxWidth: DATA_CONTAINER_WIDTH,
+            // overflowX: 'scroll',
+            // overflowY:""
+          }}
         >
           {this.renderRows()}
         </div>

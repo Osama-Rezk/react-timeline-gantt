@@ -5,29 +5,29 @@ const defvalues = {
         backgroundColor: '#333333',
         fontSize: 10,
         color: 'white',
-        textAlign: 'center'
-      }
+        textAlign: 'center',
+      },
     },
     middle: {
       style: {
-        backgroundColor: 'chocolate'
+        backgroundColor: 'chocolate',
       },
       selectedStyle: {
         backgroundColor: '#b13525',
-        fontWeight: 'bold'
-      }
+        fontWeight: 'bold',
+      },
     },
     bottom: {
       style: {
-        background: 'grey',
-        color: 'white',
-        fontSize: 9
+        // background: 'grey',
+        // color: 'white',
+        // fontSize: 9,
       },
       selectedStyle: {
         backgroundColor: '#b13525',
-        fontWeight: 'bold'
-      }
-    }
+        fontWeight: 'bold',
+      },
+    },
   },
   taskList: {
     title: {
@@ -36,56 +36,58 @@ const defvalues = {
         backgroundColor: '#333333',
         borderBottom: 'solid 1px silver',
         color: 'white',
-        textAlign: 'center'
-      }
+        textAlign: 'center',
+      },
     },
     task: {
       style: {
-        backgroundColor: '#fbf9f9'
-      }
+        backgroundColor: '#fbf9f9',
+      },
     },
     verticalSeparator: {
       style: {
-        backgroundColor: '#333333'
+        backgroundColor: '#333333',
       },
       grip: {
         style: {
-          backgroundColor: '#cfcfcd'
-        }
-      }
-    }
+          backgroundColor: '#cfcfcd',
+        },
+      },
+    },
   },
   dataViewPort: {
     rows: {
       style: {
-        backgroundColor: '#fbf9f9',
-        borderBottom: 'solid 0.5px #cfcfcd'
-      }
+        // backgroundColor: '#fbf9f9',
+        // borderBottom: 'solid 0.5px #cfcfcd'
+      },
     },
     task: {
       showLabel: false,
 
       style: {
         position: 'absolute',
-        borderRadius: 14,
-        color: 'white',
+        borderRadius: 4,
+        // color: 'white',
         textAlign: 'center',
-        backgroundColor: 'grey'
+        backgroundColor: 'white',
+        borderLeft: '4px solid #DD0908',
+        cursor: 'pointer',
       },
       selectedStyle: {
         position: 'absolute',
         borderRadius: 14,
-        border: 'solid 1px #ff00fa',
-        color: 'white',
+        // border: 'solid 1px #ff00fa',
+        // color: 'white',
         textAlign: 'center',
-        backgroundColor: 'grey'
-      }
-    }
+        // backgroundColor: 'grey',
+      },
+    },
   },
   links: {
     color: 'black',
-    selectedColor: '#ff00fa'
-  }
+    selectedColor: '#ff00fa',
+  },
 };
 
 class Config {

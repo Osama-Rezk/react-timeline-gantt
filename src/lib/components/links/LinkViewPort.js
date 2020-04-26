@@ -14,6 +14,8 @@ export default class LinkViewPort extends Component {
   renderLink(startItem, endItem, link, key) {
     let startPosition = this.getItemPosition(startItem.index, startItem.item.end);
     let endPosition = this.getItemPosition(endItem.index, endItem.item.start);
+
+    console.log(startPosition, endPosition);
     return (
       <Link
         key={key}

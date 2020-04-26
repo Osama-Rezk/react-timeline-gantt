@@ -319,7 +319,7 @@ class TimeLine extends Component {
     }
     return (
       <div className="timeLine">
-        <div className="timeLine-side-main" style={this.state.sideStyle}>
+        {/* <div className="timeLine-side-main" style={this.state.sideStyle}>
           <TaskList
             ref="taskViewPort"
             itemheight={this.props.itemheight}
@@ -333,7 +333,7 @@ class TimeLine extends Component {
             nonEditable={this.props.nonEditableName}
           />
           <VerticalSpliter onTaskListSizing={this.onTaskListSizing} />
-        </div>
+        </div> */}
         <div className="timeLine-main">
           <Header
             headerData={this.state.headerData}

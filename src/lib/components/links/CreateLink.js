@@ -34,6 +34,7 @@ export default class CreateLink extends Component {
 
   doMouseUp = (e) => {
     this.props.onFinishCreateLink();
+    console.log('>>>>>>>>', this.props.start);
   };
 
   render() {
